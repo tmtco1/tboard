@@ -31,12 +31,12 @@ VkDbusInterface::VkDbusInterface(QObject *parent) :
     auto ok = connection.registerObject("/VirtualKeyboard", this);
     if (!ok) {
         logger->log("D-Bus: failed to register object");
-        qCritical() << "eta-kbd: D-Bus: failed to register object";
+        qCritical() << "tmtco-kbd: D-Bus: failed to register object";
     }
-    ok = connection.registerService("org.eta.virtualkeyboard");
+    ok = connection.registerService("org.tmtco.virtualkeyboard");
     if (!ok) {
         logger->log("D-Bus: failed to register service");
-        qCritical() << "eta-kbd: D-Bus: failed to register service";
+        qCritical() << "tmtco-kbd: D-Bus: failed to register service";
     }
 }
 

@@ -19,7 +19,7 @@
  *****************************************************************************/
 import QtQuick 2.3
 import QtQuick.Window 2.0
-import eta.helper 1.0
+import tmtco.helper 1.0
 
 Rectangle {
     id: key

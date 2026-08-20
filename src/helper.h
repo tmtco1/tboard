@@ -23,7 +23,7 @@
 #include <QObject>
 #include <QDir>
 
-#define ETA_CONFIG_PATH (QDir::homePath() + "/.config/eta/eta-keyboard/config.ini")
+#define TBOARD_CONFIG_PATH (QDir::homePath() + "/.config/tmtco/tboard/config.ini")
 
 class QDBusInterface;
 class QString;
@@ -87,10 +87,10 @@ private:
     VkDbusInterface *vkdi;
     QDBusInterface *interface;
     XKBLibWrapper *xkblw;
-    Settings *s;    
+    Settings *s;
     FocusWatcher *focusWatcher;
     Logger *logger;
-private slots:    
+private slots:
     void showSlot(bool password);
     void showForceSlot(bool password);
 

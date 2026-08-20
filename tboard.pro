@@ -1,6 +1,6 @@
 QT += qml quick widgets dbus x11extras network svg
 
-TARGET = eta-keyboard
+TARGET = tboard
 TEMPLATE = app
 
 SOURCES += src/xwrapper.cpp \
@@ -30,26 +30,26 @@ CONFIG+=declarative_debug qml_debug
 
 target.path = /usr/bin/
 
-desktop_file.files = eta-keyboard.desktop
+desktop_file.files = tboard.desktop
 desktop_file.path = /usr/share/applications/
 
-autostart_file.files = eta-keyboard-autostart.desktop
+autostart_file.files = tboard-autostart.desktop
 autostart_file.path = /etc/xdg/autostart/
 
-icon.files = eta-keyboard.svg
+icon.files = tboard.svg
 icon.path = /usr/share/icons/hicolor/scalable/apps/
 
 icon_project.files = keyboard.svg
-icon_project.path = /usr/share/eta/eta-keyboard/
+icon_project.path = /usr/share/tmtco/tboard/
 
 status_icons.files = ui/Images/auto-on-status.svg ui/Images/auto-off-status.svg
-status_icons.path = /usr/share/eta/eta-keyboard/
+status_icons.path = /usr/share/tmtco/tboard/
 
-atspi_env.files = atspi/99eta-a11y
+atspi_env.files = atspi/99tboard-a11y
 atspi_env.path = /etc/X11/Xsession.d
-tif.files = atspi/eta-tif
+tif.files = atspi/tboard-tif
 tif.path = /usr/bin
-tif_desktop.files = atspi/eta-tif-autostart.desktop
+tif_desktop.files = atspi/tboard-tif-autostart.desktop
 tif_desktop.path = /etc/xdg/autostart
 
 translations.files = locale/*

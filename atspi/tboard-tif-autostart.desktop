@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.1
-Name=Eta Tif
-Exec=eta-tif
+Name=tboard-tif
+Exec=tboard-tif
 Icon=
 Terminal=false
 Type=Application

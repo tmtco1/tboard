@@ -48,7 +48,7 @@ Helper::Helper(QObject *parent):
         return;
 
     // Load Atspi state from QSettings
-    QSettings settings(ETA_CONFIG_PATH, QSettings::IniFormat);
+    QSettings settings(TBOARD_CONFIG_PATH, QSettings::IniFormat);
     showAtspi = settings.value("AtspiEnabled", true).toBool();
     autoHideEnabled = settings.value("AutoHideEnabled", false).toBool();
 
@@ -219,7 +219,7 @@ void Helper::setEnableAtspi(bool status)
 {
     showAtspi = status;
     // Save Atspi state to QSettings
-    QSettings settings(ETA_CONFIG_PATH, QSettings::IniFormat);
+    QSettings settings(TBOARD_CONFIG_PATH, QSettings::IniFormat);
     settings.setValue("AtspiEnabled", showAtspi);
     settings.sync();
     emit atspiChanged(status);
@@ -233,7 +233,7 @@ bool Helper::getEnableAtspi()
 void Helper::setAutoHide(bool status)
 {
     autoHideEnabled = status;
-    QSettings settings(ETA_CONFIG_PATH, QSettings::IniFormat);
+    QSettings settings(TBOARD_CONFIG_PATH, QSettings::IniFormat);
     settings.setValue("AutoHideEnabled", autoHideEnabled);
     settings.sync();
     emit autoHideChanged(status);
@@ -243,4 +243,3 @@ bool Helper::getAutoHide()
 {
     return autoHideEnabled;
 }
-

@@ -26,7 +26,7 @@
 class VirtualKeyboardInterfaceAdaptor : public QDBusAbstractAdaptor
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.eta.virtualkeyboard")
+    Q_CLASSINFO("D-Bus Interface", "org.tmtco.virtualkeyboard")
 public:
     VirtualKeyboardInterfaceAdaptor(QObject *parent);
     void emitAtspiStateChanged(bool enabled);

@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>ui/Images/gear.svg</file>
-        <file>ui/Images/pardus.svg</file>
+        <file>ui/Images/tux.svg</file>
         <file>ui/Images/close.svg</file>
         <file>ui/Images/view-conceal-symbolic.svg</file>
         <file>ui/Images/view-reveal-symbolic.svg</file>

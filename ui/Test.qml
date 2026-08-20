@@ -19,7 +19,7 @@
  *****************************************************************************/
 import QtQuick 2.3
 import QtQuick.Controls 1.2
-import eta.helper 1.0
+import tmtco.helper 1.0
 import QtQuick.Window 2.0
 
 
@@ -352,7 +352,7 @@ ApplicationWindow {
             caps.checked = helper.getCapslockStatus();
         }
     }
-    Component.onCompleted: {        
+    Component.onCompleted: {
         for(var i = 0; i< helper.getNumberOfLayouts();i++)
         {
             comboModel.append({text:helper.getLayoutName(i)});
@@ -362,7 +362,7 @@ ApplicationWindow {
         }
         test.currentLayoutName = helper.getCurrentLayout();
         test.layoutIndex = helper.getCurrentLayoutIndex();
-        languages.currentIndex = test.layoutIndex;        
+        languages.currentIndex = test.layoutIndex;
         test.keyColor = helper.getColor() === "" ? "gray" : helper.getColor();
 
     }

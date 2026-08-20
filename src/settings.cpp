@@ -33,14 +33,14 @@ Settings::Settings(QObject *parent) :
     m_opacity(1.0),
     m_languageVariant("")
 {
-    configpath = ETA_CONFIG_PATH;
+    configpath = TBOARD_CONFIG_PATH;
 
     preferences = new QSettings(configpath, QSettings::IniFormat, this);
 
     QFileInfo checkConfig(configpath);
 
     if (checkConfig.exists() && checkConfig.isFile()) {
-        preferences->beginGroup("eta-keyboard");
+        preferences->beginGroup("tboard");
         m_color = preferences->value("Color").toInt();
         m_layoutType = preferences->value("LayoutType").toString();
         m_scale = preferences->value("Scale").toDouble();
@@ -98,7 +98,7 @@ QString Settings::getLanguageVariant() const
 
 void Settings::saveSettings()
 {
-    preferences->beginGroup("eta-keyboard");
+    preferences->beginGroup("tboard");
 
     preferences->setValue("Color", this->m_color);
     preferences->setValue("LayoutType", this->m_layoutType);

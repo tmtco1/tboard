@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.1
+Name=tboard
+Name[pt]=tboard
+Name[tr]=tboard
+Type=Application
+Comment=tboard virtual keyboard.
+Comment[tr]=tboard sanal klavye.
+Terminal=false
+Exec=/usr/bin/tboard show
+Icon=tboard
+Categories=Qt;Utility;
+GenericName=Virtual Keyboard
+GenericName[pt]=Teclado Virtual
+GenericName[tr]=Sanal Klavye

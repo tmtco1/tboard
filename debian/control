@@ -1,8 +1,8 @@
-Source: eta-keyboard
+Source: tboard
 Section: utils
 Priority: optional
-Maintainer: Emel Öztürk <emel.ozturk@pardus.org.tr>
-Build-Depends: debhelper (>= 9), 
+Maintainer: İsmail Uygar <ismailuygar10@gmail.com>
+Build-Depends: debhelper (>= 9),
     libc6,
     libgcc1,
     libgl1-mesa-glx | libgl1,
@@ -28,9 +28,9 @@ Build-Depends: debhelper (>= 9),
     libxtst-dev,
     qtdeclarative5-dev
 Standards-Version: 4.6.1
-Homepage: http://pardus.org.tr
+Homepage: https://tmtco1.github.io/
 
-Package: eta-keyboard
+Package: tboard
 Architecture: amd64
 Depends: ${shlibs:Depends}, ${misc:Depends},
  libqt5svg5,
@@ -39,7 +39,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
  qml-module-qtquick-window2,
  qml-module-qtquick2,
  python3-pyatspi
-Description: ETAP Virtual Keyboard
+Description: tmtco's Virtual Keyboard
  An easy-to-use, draggable virtual keyboard supporting 16 languages.
  Designed for accessibility and multilingual typing needs,
  it provides a convenient on-screen keyboard solution for users who require input in multiple languages.

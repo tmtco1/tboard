@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Emel Öztürk <emel.ozturk@pardus.org.tr>, 2025.
 #
-msgid ""    
+msgid ""
 msgstr ""
 "Project-Id-Version: 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
@@ -31,5 +31,5 @@ msgstr "Manuel"
 msgid "Auto Hide"
 msgstr "Otomatik Gizle"
 
-msgid "ETA Keyboard"
-msgstr "ETA Klavye"
+msgid "tboard"
+msgstr "tboard"

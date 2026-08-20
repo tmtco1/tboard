@@ -18,15 +18,15 @@ from gi.repository import GLib, Gtk, XApp
 import locale
 from locale import gettext as _
 
-locale.bindtextdomain('eta-keyboard', '/usr/share/locale')
-locale.textdomain('eta-keyboard')
+locale.bindtextdomain('tboard', '/usr/share/locale')
+locale.textdomain('tboard')
 
 DBusGMainLoop(set_as_default=True)
 session_bus = dbus.SessionBus()
 
 # Status icon paths
-ICON_AUTO_ON = '/usr/share/eta/eta-keyboard/auto-on-status.svg'
-ICON_AUTO_OFF = '/usr/share/eta/eta-keyboard/auto-off-status.svg'
+ICON_AUTO_ON = '/usr/share/tmtco/tboard/auto-on-status.svg'
+ICON_AUTO_OFF = '/usr/share/tmtco/tboard/auto-off-status.svg'
 
 
 def get_dbus_interface(name, path, interface):
@@ -41,9 +41,9 @@ def get_dbus_interface(name, path, interface):
 def get_keyboard():
     try:
         obj = get_dbus_interface(
-            'org.eta.virtualkeyboard',
+            'org.tmtco.virtualkeyboard',
             '/VirtualKeyboard',
-            'org.eta.virtualkeyboard'
+            'org.tmtco.virtualkeyboard'
         )
         return obj
     except Exception as e:
@@ -117,10 +117,10 @@ class IndicatorState:
             return
         if self.auto_mode:
             self.status_icon.set_icon_name(ICON_AUTO_ON)
-            tip = _('ETA Keyboard') + ' - ' + _('Auto')
+            tip = _('tboard') + ' - ' + _('Auto')
         else:
             self.status_icon.set_icon_name(ICON_AUTO_OFF)
-            tip = _('ETA Keyboard') + ' - ' + _('Manual')
+            tip = _('tboard') + ' - ' + _('Manual')
         self.status_icon.set_tooltip_text(tip)
 
     def update_menu_items(self, auto_action_func, manual_action_func):
@@ -290,7 +290,7 @@ def create_indicator():
 
     # Configure status icon
     state.status_icon = XApp.StatusIcon()
-    state.status_icon.set_name('eta-keyboard')
+    state.status_icon.set_name('tboard')
 
     # Sync initial state from keyboard and set icon
     state.sync_from_keyboard()
@@ -315,8 +315,8 @@ def create_indicator():
     session_bus.add_signal_receiver(
         on_atspi_state_changed,
         signal_name='atspiStateChanged',
-        dbus_interface='org.eta.virtualkeyboard',
-        bus_name='org.eta.virtualkeyboard',
+        dbus_interface='org.tmtco.virtualkeyboard',
+        bus_name='org.tmtco.virtualkeyboard',
         path='/VirtualKeyboard'
     )
 
@@ -332,8 +332,8 @@ def create_indicator():
     session_bus.add_signal_receiver(
         on_auto_hide_state_changed,
         signal_name='autoHideStateChanged',
-        dbus_interface='org.eta.virtualkeyboard',
-        bus_name='org.eta.virtualkeyboard',
+        dbus_interface='org.tmtco.virtualkeyboard',
+        bus_name='org.tmtco.virtualkeyboard',
         path='/VirtualKeyboard'
     )
 

@@ -1,4 +1,4 @@
-# Portuguese translation for eta-keyboard.
+# Portuguese translation for tboard.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2026.
@@ -30,5 +30,5 @@ msgstr "Manual"
 msgid "Auto Hide"
 msgstr "Ocultar automaticamente"
 
-msgid "ETA Keyboard"
-msgstr "Teclado ETA"
+msgid "tboard"
+msgstr "tboard"

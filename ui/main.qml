@@ -20,7 +20,7 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
-import eta.helper 1.0
+import tmtco.helper 1.0
 
 
 ApplicationWindow {
@@ -31,7 +31,7 @@ ApplicationWindow {
           Qt.X11BypassWindowManagerHint
     id: main
     visible: false
-    title: qsTr("ETA Virtual Keyboard")
+    title: qsTr("tboard")
     color: "#010101"
 
     property string keyColor: "#585858" //settings.keyColor

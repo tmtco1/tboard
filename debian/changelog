@@ -1,3 +1,9 @@
+tboard (1.1.8-1) unstable; urgency=medium
+
+  * Rebrand eta-keyboard as tboard.
+
+ -- İsmail Uygar <ismailuygar10@gmail.com>  Thu, 20 Aug 2026 17:00:00 +0300
+
 eta-keyboard (1.1.8) unstable; urgency=medium
 
   [ Hugo Carvalho ]
@@ -374,4 +380,3 @@ eta-keyboard (0.2.0) unstable; urgency=medium
   * Bump debian version.
 
  -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Thu, 14 Sep 2017 14:31:37 +0300
-

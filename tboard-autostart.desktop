@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.1
 Name=Qt Virtual Keyboard
-Exec=eta-keyboard
+Exec=tboard
 Icon=
 Terminal=false
 Type=Application

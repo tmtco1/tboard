@@ -7,7 +7,7 @@
 #include <QTextStream>
 #include <QCoreApplication>
 
-#define log_file_name "eta-keyboard.log"
+#define log_file_name "tboard.log"
 
 Logger::Logger(QObject *parent) : QObject(parent)
 {
@@ -17,7 +17,7 @@ Logger::Logger(QObject *parent) : QObject(parent)
             QStandardPaths::standardLocations(QStandardPaths::HomeLocation);
     whoami = homePath.first().split(QDir::separator()).last();
 
-    QString logPath = QDir::homePath() + "/.cache/eta/eta-keyboard";
+    QString logPath = QDir::homePath() + "/.cache/tmtco/tboard";
     createFile(logPath, log_file_name);
 }
 

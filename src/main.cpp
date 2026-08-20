@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
         Helper::showOnStart = true;
     }
 
-    qmlRegisterType<Helper>("eta.helper",1,0,"Helper");
+    qmlRegisterType<Helper>("tmtco.helper",1,0,"Helper");
 
     QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
@@ -79,14 +79,14 @@ int main(int argc, char *argv[])
     {
         if (argc == 2 && QString(argv[1]) == "show") {
             qDebug("Trying to show");
-            QDBusInterface iface("org.eta.virtualkeyboard",
+            QDBusInterface iface("org.tmtco.virtualkeyboard",
                                 "/VirtualKeyboard",
-                                "org.eta.virtualkeyboard",
+                                "org.tmtco.virtualkeyboard",
                                 QDBusConnection::sessionBus());
             QDBusReply<void> reply = iface.call("showForce", false);
             return reply.isValid() ? 0 : 1;
         } else {
-            qDebug("eta-keyboard is allready running");
+            qDebug("tboard is allready running");
             return 0;
         }
 

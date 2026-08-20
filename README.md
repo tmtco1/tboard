@@ -1,46 +1,18 @@
-# **eta-keyboard**
+# tboard
 
-![License](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)
+**tboard** is an independent keyboard application currently under development.
 
-![Issues](https://img.shields.io/github/issues/pardus/eta-keyboard)
+tboard is based on [eta-keyboard](https://github.com/pardus/eta-keyboard), with the goal of providing an independently developed and extended virtual keyboard experience.
+>
 
-## Qt Virtual Keyboard
-
-`eta-keyboard` is an advanced virtual keyboard designed for UNIX-like systems, leveraging X11 keycode relations and server-client programming.
-
-### Major Features
-
-* Floating interface for flexible positioning
-* Fast and responsive performance
-* Ability to change system-wide keyboard layout
-* D-Bus interface accessible in session
-* A11y support with the help of simple AT-SPI client [eta-tif](https://github.com/pardus/eta-tif)
-* Full and tablet keyboard layout support
-* EOE (Easy on Eyes) color themes
-* Easy to configure with self-contained settings
-* Support for 16 additional languages
-
-### Screenshots
-
-- #### Keyboard Layouts
-    ![full](/screenshots/vk-full.png)
-    ![tablet](/screenshots/vk-tablet.png)
-
-- #### Theme Options
-    ![blue](/screenshots/vk-blue.png)
-    ![brown](/screenshots/vk-brown.png)
-    ![green](/screenshots/vk-green.png)
-    ![white](/screenshots/vk-white.png)
-
-- #### Accessibility & Settings
-    ![a11y](/screenshots/vk-a11y-support.png)
-    ![settings](/screenshots/vk-settings.png)
+> [!IMPORTANT]
+> tboard is currently under development and is not ready for use yet.
 
 ### Build
 
 1. Clone the project
 ```bash
-git clone https://github.com/pardus/eta-keyboard
+git clone https://github.com/tmtco1/tboard
 ```
 
 2. Install build dependencies
@@ -55,7 +27,7 @@ sudo apt install build-essential libc6 libgcc1 libgl1-mesa-glx libgl1 \
 
 3. Build
 ```bash
-cd eta-keyboard
+cd tboard
 mkdir build
 cd build
 qmake ../
@@ -72,21 +44,27 @@ sudo apt install libqt5svg5 qml-module-qtquick-controls \
 
 Run the keyboard:
 ```bash
-./eta-keyboard show
+./tboard show
 ```
 
-Test remote calling:
-```bash
-sudo apt install qdbus-qt5
-qdbus org.eta.virtualkeyboard /VirtualKeyboard org.eta.virtualkeyboard.toggle
-```
-
-### 📦 Debian Packaging
+### Debian Packaging
 
 ```bash
-cd eta-keyboard
+cd tboard
 sudo apt install build-essential debmake debhelper git-buildpackage
 sudo mk-build-deps -ir
 gbp buildpackage --git-export-dir=/tmp/build-area -b -us -uc
 cd /tmp/build-area
 ```
+Test remote calling:
+```bash
+sudo apt install qdbus-qt5
+qdbus org.tmtco.virtualkeyboard /VirtualKeyboard org.tmtco.virtualkeyboard.toggle
+```
+## License
+
+tboard contains code derived from **Pardus eta-keyboard**.
+
+The applicable portions of the project are licensed under the **GNU Lesser General Public License v3.0**.
+
+See [`LICENSE`](LICENSE) for the full license text.
