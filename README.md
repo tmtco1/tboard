@@ -61,6 +61,15 @@ Test remote calling:
 sudo apt install qdbus-qt5
 qdbus org.tmtco.virtualkeyboard /VirtualKeyboard org.tmtco.virtualkeyboard.toggle
 ```
+### Make Pardus Greeter Use tboard
+
+The Pardus Greeter uses eta-keyboard by default. To change this behavior and make it start tboard instead:
+
+```bash
+sudo sed -i 's/eta-keyboard show/tboard show/' /etc/pardus/greeter.conf.d/00-etap.conf
+```
+
+
 ## License
 
 tboard contains code derived from **Pardus eta-keyboard**.
