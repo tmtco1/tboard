@@ -67,7 +67,7 @@ Rectangle {
     property int symbolLevel
     property double transparency: main.transparency
     property bool isSpecialKeys: keyCode === 900 || keyCode === 901
-
+    property var repeatingKeyCodes: [22, 111, 113, 114, 116]
 
     color: ma.containsMouse && main.keyHoverTimer ? key.keyHoverColor : key.keyColor
     radius: key.keyRadius
@@ -277,8 +277,8 @@ Rectangle {
 
             btnPressed()
 
-            if (key.keyCode == 22){
-                main.pressedBackspace()
+            if (repeatingKeyCodes.includes(key.keyCode)) {
+                main.pressedRepeatingKey(key.keyCode)
             }
             else if (key.keyCode != 66){
                 main.keyClicked(key.keyCode, mirror, keyText, key.symbolLevel,
@@ -299,8 +299,8 @@ Rectangle {
 
         onReleased: {
             btnReleased()
-            if (key.keyCode == 22){
-                main.releasedBackspace()
+            if (repeatingKeyCodes.includes(key.keyCode)){
+                main.releasedRepeatingKey(key.keyCode)
             }
         }
 

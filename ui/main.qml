@@ -112,6 +112,11 @@ ApplicationWindow {
     }
 
     function releaseAllSticky(){
+        if (btnAlt) helper.fakeKeyRelease(64)
+        if (btnAltGr) helper.fakeKeyRelease(108)
+        if (btnCtrl) helper.fakeKeyRelease(37)
+        if (btnMeta) helper.fakeKeyRelease(133)
+        if (btnShift) helper.fakeKeyRelease(50)
         btnAlt = false
         btnAltGr = false
         btnCtrl = false
@@ -120,6 +125,7 @@ ApplicationWindow {
         sticky = false
         stickyNum = 0
         keyLevel = 0
+
         releaseAll = !releaseAll
     }
 
@@ -227,22 +233,42 @@ ApplicationWindow {
                 stickyNum+= btnCtrl ? -1 : 1
                 btnCtrl = !btnCtrl
                 sticky = true
+                if(btnCtrl) {
+                    helper.fakeKeyPress(37)
+                } else {
+                    helper.fakeKeyRelease(37)
+                }
                 break
             case 64: // alt
                 stickyNum+= btnAlt ? -1 : 1
                 btnAlt = !btnAlt
                 sticky = true
+                if(btnAlt) {
+                    helper.fakeKeyPress(64)
+                } else {
+                    helper.fakeKeyRelease(64)
+                }
                 break
             case 133: // meta
                 stickyNum+= btnMeta ? -1 : 1
                 btnMeta = !btnMeta
                 sticky = true
+                if(btnMeta) {
+                    helper.fakeKeyPress(133)
+                } else {
+                    helper.fakeKeyRelease(133)
+                }
                 break
             case 108: // altgr
                 stickyNum+= btnAltGr ? -1 : 1
                 main.keyLevel+= btnAltGr ? -2 : 2
                 btnAltGr = !btnAltGr
                 sticky = true
+                if(btnAltGr) {
+                    helper.fakeKeyPress(108)
+                } else {
+                    helper.fakeKeyRelease(108)
+                }
                 break
             case 50: // shift
                 stickyNum+= btnShift ? -1 : 1
@@ -250,6 +276,11 @@ ApplicationWindow {
                 btnShift = !btnShift
                 updateCapsLockState(helper.getCapslockStatus())
                 sticky = true
+                if(btnShift) {
+                    helper.fakeKeyPress(50)
+                } else {
+                    helper.fakeKeyRelease(50)
+                }
                 break
             }
 
@@ -259,27 +290,6 @@ ApplicationWindow {
             }
 
             if (!sticky) {
-
-                if (btnAlt){
-                    helper.fakeKeyPress(64)
-                }
-
-                if (btnAltGr){
-                    helper.fakeKeyPress(108)
-                }
-
-                if (btnCtrl){
-                    helper.fakeKeyPress(37)
-                }
-
-                if (btnMeta){
-                    helper.fakeKeyPress(133)
-                }
-
-                if (btnShift){
-                    helper.fakeKeyPress(50)
-                }
-
                 helper.fakeKeyPress(keyCode);
                 helper.fakeKeyRelease(keyCode);
 
@@ -486,14 +496,16 @@ ApplicationWindow {
         main.m_settings_width = settings.width
     }
 
-    function pressedBackspace(){
-        helper.fakeKeyPress(22)
-        mirrorText.text = mirrorText.text.substring(0, mirrorText.text.length - 1)
-        main.storedMirror = main.storedMirror.substring(0, main.storedMirror.length - 1)
+    function pressedRepeatingKey(keyCode){
+        helper.fakeKeyPress(keyCode)
+        if(keyCode == 22) {
+            mirrorText.text = mirrorText.text.substring(0, mirrorText.text.length - 1)
+            main.storedMirror = main.storedMirror.substring(0, main.storedMirror.length - 1)
+        }
     }
 
-    function releasedBackspace(){
-        helper.fakeKeyRelease(22)
+    function releasedRepeatingKey(keyCode){
+        helper.fakeKeyRelease(keyCode)
     }
 
     function holdBackspace(keyCode) {

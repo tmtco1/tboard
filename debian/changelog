@@ -1,3 +1,10 @@
+tboard (0.1.0) unstable; urgency=medium
+
+  * Added arrow key hold
+  * Changed implementation for modifier keys
+
+-- İsmail Uygar <ismailuygar10@gmail.com>  Tue, 25 Aug 2026 17:28:00 +0300
+
 tboard (1.1.8-1) unstable; urgency=medium
 
   * Rebrand eta-keyboard as tboard.
