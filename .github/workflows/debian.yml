@@ -32,7 +32,7 @@ jobs:
             qt5-qmake \
             qtbase5-dev \
             qtdeclarative5-dev \
-            qtsvg5-dev \
+            libqt5svg5-dev \
             libqt5x11extras5-dev \
             libx11-dev \
             libx11-xcb-dev \
